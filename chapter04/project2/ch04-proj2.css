@@ -2,25 +2,143 @@
 * {
    box-sizing: border-box;
 }
+
 body, section, header, div, p, h1, h2, h3, ul, li {
    margin: 0;
    padding: 0;
 }
+
 body {
    font-family: 'Open Sans', sans-serif;
    box-sizing: border-box;
    background-color: #e4e7eb;
    font-weight: 300;
+   padding: 40px;
 }
+
+section {
+   width: 910px;
+}
+
 header {
    margin-left: 20px;
 }
+
 h1 { 
    text-align: center;
    font-weight: 600;
    font-size: 42px;
-   padding: 10px 0;
+   padding: 10px;
 }
 
-/* add styles here */
+div {
+   display: inline-block;
+   text-align: center;
+}
+
+ul {
+   list-style-type: none;
+}
+
+ul span {
+   font-weight: 800;
+}
+
+div a:hover{
+   background-color: #437CBF;
+}
+
+.column a {
+   background-color: #3A6BA5;
+   border-radius: 10px;
+   padding: 20px 80px;
+   font-weight: 300;
+   color: white;
+}
+
+.column {
+   display: inline-block;
+   width: 300px;
+}
+
+.featured {
+   color: white;
+}
+
+.price span{
+   font-size: 18px;
+}
+
+.price {
+   font-weight: 800;
+   font-size: 36px;
+}
+
+.free {
+   background-color: #5BB189;
+}
+
+.standard {
+   background-color: #4B0082;
+}
+
+.professional {
+   background-color: #EC632A;
+}
+
+.column li, h3 {
+   padding: 20px;
+}
+
+.column div {
+   padding: 40px;
+}
+
+li:nth-child(even){
+   background-color: rgba(47, 59, 64, 0.35);
+}
+
+.column:nth-child(even) {
+   background-color: white;
+}
+
+.column:nth-child(odd) {
+   background-color: #2F4F4F;
+}
+
+#confidence {
+   font-weight: 300;
+   background-color: #2F4F4F;
+   margin-top: 10px;
+   width: 910px;
+   padding: 20px;
+   text-align: left;
+   color: white;
+   font-size: 18px;
+}
+
+#confidence h2 {
+   font-size: 36px;
+}
+
+#confidence ul {
+   font-weight: 400;
+   list-style: none;
+   background-image: url("checkmark.svg");
+   background-repeat: repeat-y;
+   background-position: left;
+   padding-left: 30px;
+   background-size: 25px;
+   background-position-y: 20px;
+}
+
+#confidence li:nth-child(even){
+   background-color: #2F4F4F;
+}
+
+#confidence a {
+   color: lightblue;
+}
+
+
 
