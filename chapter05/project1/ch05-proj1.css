@@ -11,12 +11,18 @@ section {
    background-color: white;
    margin: 1em 4em 1em 4em;
    border: solid 1pt black;
-
 }
+
 section h3 {
   color: white;
   padding: 0.75rem;
-  background-color: #263238; 
+  background-color: #263238;
+}
+
+#table {
+    padding-left: 20px;
+    text-align: justify;
+    border-spacing: 20px
 }
 
 .status {
@@ -25,19 +31,58 @@ section h3 {
     color: white;
     
 }
+
 .status-processing {
     background-color:    #E65100;    
 }
+
 .status-shipped {
     background-color:   #4CAF50;    
 }
+
 .status-pending {
     background-color:    #03A9F4;    
 }
 
+form {
+    padding: 10px 30px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form p {
+    padding: 5px;
+}
+
+caption, legend{
+    background-color: #2F4F4F;
+    color: white;
+}
+
+caption {
+    margin: 10px 1%;
+    padding: 10px;
+}
+
+legend {
+    margin-inline: auto;
+    padding: 10px 48%;
+}
+
+.submit {
+    color: white;
+    border: none;
+    background-color: rebeccapurple;
+    padding: 10px 20px;
+}
+
+footer {
+    margin-left: 60px;
+}
 
 
-/* table formatting -- you will add these */
 
 
 

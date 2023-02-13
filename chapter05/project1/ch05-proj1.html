@@ -9,20 +9,126 @@
    <link rel="stylesheet" href="ch05-proj1.css" />
 </head>
 <body>
-
     <section>
          <h3>Data</h3>
-         
+         <table id="table" style="margin-left:auto; margin-right:auto; width:100%; height:100%">
+             <caption>Orders</caption>
+             <tr>
+                 <th>Id</th>
+                 <th>Data</th>
+                 <th>Customer</th>
+                 <th>Country</th>
+                 <th>Progress</th>
+                 <th>Status</th>
+             </tr>
+             <tr>
+                 <td>123</td>
+                 <td>Sep 12, 2017</td>
+                 <td>Jean Rousseau</td>
+                 <td>France</td>
+                 <td>
+                     <progress max="10" value="10"> </progress>
+                 </td>
+                 <td>
+                     <span class="status-shipped status"> Shipped </span>
+                 </td>
+             </tr>
+             <tr>
+                 <td>144</td>
+                 <td>Sep 20, 2017</td>
+                 <td>Georg Hegel</td>
+                 <td>Germany</td>
+                 <td>
+                     <progress max="10" value="10"> </progress>
+                 </td>
+                 <td>
+                     <span class="status-shipped status"> Shipped </span>
+                 </td>
+             </tr>
+             <tr>
+                 <td>149</td>
+                 <td>Oct 3, 2017</td>
+                 <td>John Locke</td>
+                 <td>England</td>
+                 <td>
+                     <progress max="10" value="6"> </progress>
+                 </td>
+                 <td>
+                     <span class="status-processing status"> Processing </span>
+                 </td>
+             </tr>
+             <tr>
+                 <td>162</td>
+                 <td>Oct 8, 2017</td>
+                 <td>Thomas Hobbes</td>
+                 <td>England</td>
+                 <td>
+                     <progress max="10" value="3"> </progress>
+                 </td>
+                 <td>
+                     <span class="status-pending status"> Pending </span>
+                 </td>
+             </tr>
+             <tr>
+                 <td>177</td>
+                 <td>Oct 10, 2017</td>
+                 <td>Johann Fichte</td>
+                 <td>Germany</td>
+                 <td>
+                     <progress max="10" value="3"> </progress>
+                 </td>
+                 <td>
+                     <span class="status-pending status"> Pending </span>
+                 </td>
+             </tr>
+         </table>
       
          
     </section>
     
     <section>
          <h3>Revise</h3>
-         
+         <form method="post" action="https://www.randyconnolly.com/tests/process.php">
+             <fieldset>
+                 <legend>Filter Orders</legend>
+                 <p>
+                     <label>Customer</label>
+                     <br>
+                     <input name="name" type="text"  placeholder="Enter name">
+                 </p>
+                 <p>
+                     <label>Country</label>
+                     <br>
+                     <select name="country">
+                         <option>Choose a country</option>
+                         <option>Germany</option>
+                         <option>France</option>
+                         <option>England</option>
+                     </select>
+                 </p>
+                 <p id="status">
+                     <label>Status</label>
+                     <p>
+                        <input name="status" type="radio" value="Pending">Pending
+                        <input name="status" type="radio" value="Processing">Processing
+                        <input name="status" type="radio" value="Shipped">Shipped
+                     </p>
+                 </p>
+                 <p>
+                     <label>Order Date</label>
+                     <br>
+                     <input name="date" type="date" placeholder="mm/dd/yyyy">
+                 </p>
+                 <br>
+                 <input type="submit" class="submit"/>
+             </fieldset>
+         </form>
         
     </section>    
 
 
 </body>
+<footer>
+    Edited by: Michael Seavers
+</footer>
 </html>
