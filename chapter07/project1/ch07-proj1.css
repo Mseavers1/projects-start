@@ -12,11 +12,14 @@ body {
     font-size: 1em;
     background-color: var(--color-back-light);
 }
+
 header {
    padding: 0 var(--spacer-base);
    background-color: var(--color-back-dark);
    height: var(--header-height);
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 header h1 {
     margin: 0;   
@@ -40,28 +43,60 @@ button {
     cursor: pointer;
 }
 .card {
+    width: 24%;
 	background: white;
 	margin-bottom: 2em;	
     padding: 0;
-   
 }
 .card-content p {
 	padding: 0.5em 1.4em 0 1.4em;
-	font-size: var(--card-font-size);   
+	font-size: var(--card-font-size);
 }
 .card-actions {
 	padding: 0.5em 1.4em;
-	font-size: var(--card-font-size);      
+	font-size: var(--card-font-size);
+    opacity: 0;
 }
 
+.container {
+    align-items: center;
+    justify-content: center;
+}
 
+.cards{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
 
-/* add your styles here */
+@media only screen and (max-width: 480px) {
+    .cards {
+        width: 100%;
+        --card-font-size: 100%;
+    }
+    
+    @media (orientation: portrait) {
+        .cards {
+            --header-font-size: 24px;
+            --header-height: 4em;
+        }
+    }
+}
 
+@media only screen and (min-width: 482px) and (max-width: 768px) {
+    .cards {
+        width: 45%;
+        --header-height: 5em;
+        --card-font-size: 100%;
+    }
+}
 
+.card:hover {
+    filter: saturate(150%);
+    box-shadow: red;
+}
 
-
-/* styles for mobile protrait screen */
-
-
-/* styles for tablet portrait and mobile landscape screens */
+.card:hover .card-actions {
+    opacity: 1;
+    transition: opacity, 1s;
+}
