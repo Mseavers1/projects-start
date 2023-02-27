@@ -67,6 +67,7 @@ button {
     display: flex;
     justify-content: space-between;
     max-width: 100%;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 480px) {
