@@ -24,22 +24,18 @@
 class App extends React.Component {
 
     render() {
-        // grab one sample movie
-        const sample = movieData[0];
-                
+
         return (
             <main className="container">
                 <section className="columns has-background-light">
                 <MovieList movies={ movieData }/>
                 <div className="column is-half">
-
-                        <MovieForm movie={sample}    />
+                  {movieData.map( m => <form className="panel has-background-grey-lighter" key={m.id}> {new MovieForm().render(m)} </form>)}
                 </div>
                 </section>
             </main>                
         );
     }
-
 }
 
 
@@ -49,7 +45,7 @@ class App extends React.Component {
 class MovieForm extends React.Component {
 
 
-    render() {
+    render(movie) {
         return (
             <form className="panel has-background-grey-lighter"  >
 
@@ -58,8 +54,8 @@ class MovieForm extends React.Component {
                         <label className="label">Title</label>
                     </div>
                     <div className="field-body">
-                        <input className="input" type="text" name="title"
-                            value="sample title" />   
+                        <input className={"input"} type="text" name="title"
+                            value={movie.title} onChange={ (e) => document.getElementsByName("title").value = e.target.value}/>
                     </div>
                 </div>   
 
@@ -69,7 +65,7 @@ class MovieForm extends React.Component {
                     </div>
                     <div className="field-body">
                         <textarea className="textarea" rows="2"  name="tagline"
-                            value="sample tagline"></textarea>
+                            value={movie.tagline}></textarea>
                     </div>
                 </div>                  
 
@@ -79,7 +75,7 @@ class MovieForm extends React.Component {
                     </div>
                     <div className="field-body">
                         <input className="input" type="text" name="runtime"
-                            value="sample runtime"/>   
+                            value={movie.runtime}/>
                     </div>
                 </div>    
                                                   
@@ -88,19 +84,19 @@ class MovieForm extends React.Component {
     }
 }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------
 */
 class MovieList extends React.Component {
-
 
 render() {
     return (
         <div className="column is-half">
             <ul className="columns is-multiline">
-                <SingleMovie  /> 
-            </ul>   
-        </div>   
+
+              {movieData.map( m => <li className="column is-one-third-desktop is-half-tablet" key={m.id}> {new SingleMovie().render(m)} </li>)}
+            </ul>
+        </div>
     );
   }
 
@@ -111,25 +107,24 @@ render() {
 */
 class SingleMovie extends React.Component {
 
-
-render() {
+  render(movie) {
     return (
-        <li className="column is-one-third-desktop is-half-tablet"  >
+
             <div className="card">
                 <div className="card-image">
                 <figure className="image is-2by3">
-                    <img src="https://image.tmdb.org/t/p/w185/sm8iVzA7kRp0d4BSIsgXjsSBMKV.jpg"  alt="Sample Title" />
+                  <img src={'https://image.tmdb.org/t/p/w185' + movie.poster}  alt={movie.title} />
                 </figure>
                 </div>
                 <div className="card-content has-text-centered content-rectangle">
-                    <h2 className="title is-6">Sample Title (000 min)</h2>
-                    <p className="is-size-7">Sample tagline</p>
+                    <h2 className="title is-6">{movie.title} ({movie.runtime} min)</h2>
+                    <p className="is-size-7"> {movie.tagline}</p>
                 </div>    
                 <footer className="card-footer">
-                    <MovieLink id="sm8iVzA7kRp0d4BSIsgXjsSBMKV" />
+                    <MovieLink id={movie.tmdbID} />
                 </footer>                                      
             </div>                
-        </li>
+
     )
 
 }
@@ -159,4 +154,5 @@ ReactDOM.render(<App />, document.querySelector('#react-container'));
   <body>
     <div id='react-container' ></div>
   </body>
+  <footer> Michael Seavers</footer>
 </html>
